@@ -10,17 +10,17 @@ Cathode support: Carbon cloth
 Surface area: 4.5 cm2
 
 ### ELECTROLYTE CONDITION:
-2M KOH + different concentration of sodium borohydride (SBH) {1,3,5,8wt.%}
+2M KOH + different concentration of Sodium Borohydride (SBH) {1,3,5,8wt.%}
 
 ### OPERATION CONDITION:
 1) Room temperature
-2) Run electrochemical impedance spectroscopy study at operating dc voltages of 0.3V, 0.5V, 0.7V
+2) Run electrochemical impedance spectroscopy study at operating DC voltages of 0.3V, 0.5V, 0.7V
 
 
 
 ## Files
 
-### 1- Impedance: Various SBH% 
+### 1- Impedance : Various SBH% 
 
 
 ```
