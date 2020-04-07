@@ -29,7 +29,7 @@ Column 1: Zreal (ohm.cm2)
 
 Column 2: Zimaginary (ohm.cm2)
 
-Column 3: Applied voltage (V)
+Column 3: Applied Cell voltage (V)
 
 Column 4: Weight percent of SBH (%)
 
@@ -50,7 +50,7 @@ Column 1: Zreal (ohm.cm2)
 
 Column 2: Zimaginary (ohm.cm2)
 
-Column 3: Applied voltage (V)
+Column 3: Applied Cell voltage (V)
 
 Column 4: Weight percent of SBH (%)
 
@@ -69,7 +69,7 @@ Column 5: Pd/C anode catalyst loading (mg/cm2)
 ```
 Column 1: Current density (mA/cm2)
 
-Column 2: Voltage (V)
+Column 2: Cell voltage (V)
 
 Column 3: Power density (mW/cm2)
 
@@ -90,7 +90,7 @@ Column 5: Pd/C anode catalyst loading (mg/cm2)
 ```
 Column 1: Current density (mA/cm2)
 
-Column 2: Voltage (V)
+Column 2: Cell voltage (V)
 
 Column 3: Power density (mW/cm2)
 
@@ -111,7 +111,7 @@ Column 5: Pd/C anode catalyst loading (mg/cm2)
 ```
 Column 1: Current density (mA/cm2)
 
-Column 2: Voltage (V)
+Column 2: Cell voltage (V)
 
 Column 3: Power density (mW/cm2)
 
