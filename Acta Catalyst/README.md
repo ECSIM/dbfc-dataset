@@ -28,7 +28,7 @@ Column 1: Zreal (ohm.cm2)
 
 Column 2: Zimaginary (ohm.cm2)
 
-Column 3: Applied Cell voltage (V)
+Column 3: Applied voltage (V)
 
 Column 4: Weight percent of SBH (%)
 
