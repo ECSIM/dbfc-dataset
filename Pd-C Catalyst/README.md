@@ -69,7 +69,7 @@ Column 5: Pd/C anode catalyst loading (mg/cm2)
 ```
 Column 1: Current density (mA/cm2)
 
-Column 2: Voltage (V)
+Column 2: Cell voltage (V)
 
 Column 3: Power density (mW/cm2)
 
@@ -90,7 +90,7 @@ Column 5: Pd/C anode catalyst loading (mg/cm2)
 ```
 Column 1: Current density (mA/cm2)
 
-Column 2: Voltage (V)
+Column 2: Cell voltage (V)
 
 Column 3: Power density (mW/cm2)
 
@@ -111,7 +111,7 @@ Column 5: Pd/C anode catalyst loading (mg/cm2)
 ```
 Column 1: Current density (mA/cm2)
 
-Column 2: Voltage (V)
+Column 2: Cell voltage (V)
 
 Column 3: Power density (mW/cm2)
 
