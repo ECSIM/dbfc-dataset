@@ -102,3 +102,39 @@ def plot_func(
     if len(legend) != 0:
         plt.legend(legend)
     plt.show()
+
+
+def impedance_plot(data, set_index):
+    """
+    Impedance plot function.
+
+    :param data: input data
+    :type data: numpy array
+    :param set_index: activation set index
+    :type set_index: int
+    :return: None
+    """
+    filtered_data = data[data[:, 3] == set_index]
+    x_plot_data = []
+    y_plot_data = []
+    voltages = sorted(list(set(filtered_data[:, 2])))
+    for v in voltages:
+        x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
+        y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
+    legend = list(map(lambda x: "V: "+format_number(x)+"V",voltages))
+    color = COLORS[:len(legend)]
+    marker = MARKERS[:len(legend)]
+    x_label = "ZReal(Ohm)"
+    y_label = "ZImage(Ohm)"
+    title = "Set " + str(set_index)
+
+    plot_func(
+        x_plot_data,
+        y_plot_data,
+        title=title,
+        x_label=x_label,
+        y_label=y_label,
+        color=color,
+        legend=legend,
+        marker=marker,
+        multi=True)
