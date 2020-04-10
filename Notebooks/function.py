@@ -4,6 +4,25 @@ COLORS = ['blue', 'green', 'red', 'black','orange','mediumblue', 'green', 'india
           'seagreen', 'goldenrod', 'turquoise', 'darkorange', 'dimgray', 'lawngreen', 'darkblue', 'lime', 'cadetblue', 'mistyrose', 'mediumorchid', 'mediumseagreen', 'lightyellow', 'mediumspringgreen', 'black', 'darkviolet', 'lightskyblue', 'silver', 'maroon', 'darkkhaki', 'aliceblue', 'gray', 'lightgrey', 'darkslategray', 'magenta', 'palegoldenrod', 'steelblue', 'yellow']
 MARKERS = [".","o","o","s","p","*","+","X","|","v","^","H","<",">","1","2","3","x","D","h"] * 5
 
+def format_number(num):
+    """
+    Removing trailing zeros.
+
+    :param num: input number
+    :type num: float
+    :return: formatted number as str
+    """
+    str_num = str(num)
+    if "." in str_num:
+        splitted_num = str_num.split(".")
+        if int(splitted_num[-1]) == 0:
+            return "".join(splitted_num[:-1])
+        else:
+            return str_num
+    else:
+        return str_num
+
+
 def plot_func(
         x,
         y,
