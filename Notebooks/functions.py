@@ -25,6 +25,7 @@ def load_data(path, set_flag=False, is_header=False):
         splitted_line = line.split(",")
         if is_header:
             header = splitted_line
+            is_header = False
             continue
         if not set_flag:
             data.append(list(map(float, splitted_line)))
