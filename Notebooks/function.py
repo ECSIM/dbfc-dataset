@@ -138,3 +138,53 @@ def impedance_plot(data, set_index):
         legend=legend,
         marker=marker,
         multi=True)
+
+
+def polarization_plot(data, RH, P, NP=None, MC=None):
+    """
+    Polarization plot function.
+
+    :param data: input data
+    :type data: numpy array
+    :param RH: Relative humidity (RH%)
+    :type RH: float
+    :param P: Pressure (psi)
+    :type P: float
+    :param NP: Nafion percent
+    :type NP: float
+    :param MC: Membrane compression
+    :type MC: float
+    :return: None
+    """
+    filtered_data = data[data[:, 4] == RH]
+    filtered_data = filtered_data[filtered_data[:, 3] == P]
+    title = "RH: {}% , P: {}psig".format(str(RH), str(P))
+    if NP is not None :
+        filtered_data = filtered_data[filtered_data[:, 6] == NP]
+        title += ", NP: {}".format(str(NP))
+    if MC is not None :
+        filtered_data = filtered_data[filtered_data[:, 5] == MC]
+        title += ", MC: {}".format(str(MC))
+    data_I = filtered_data[:, 0]
+    data_V = filtered_data[:, 1]
+    data_P = filtered_data[:, 2]
+    color1 = COLORS[0]
+    color2 = COLORS[1]
+    x_label = "Current density (mA/cm2 )"
+    y_label_1 = "Cell voltage (V)"
+    y_label_2 = "Power density (mW/cm2)"
+
+    plot_func(
+        data_I,
+        data_V,
+        title=title,
+        x_label=x_label,
+        y_label=y_label_1,
+        color=color1)
+    plot_func(
+        data_I,
+        data_P,
+        title=title,
+        x_label=x_label,
+        y_label=y_label_2,
+        color=color2)
