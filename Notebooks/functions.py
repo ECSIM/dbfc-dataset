@@ -5,7 +5,7 @@ COLORS = ['blue', 'green', 'red', 'black','orange','mediumblue', 'green', 'india
           'seagreen', 'goldenrod', 'turquoise', 'darkorange', 'dimgray', 'lawngreen', 'darkblue', 'lime', 'cadetblue', 'mistyrose', 'mediumorchid', 'mediumseagreen', 'lightyellow', 'mediumspringgreen', 'black', 'darkviolet', 'lightskyblue', 'silver', 'maroon', 'darkkhaki', 'aliceblue', 'gray', 'lightgrey', 'darkslategray', 'magenta', 'palegoldenrod', 'steelblue', 'yellow']
 MARKERS = [".","o","o","s","p","*","+","X","|","v","^","H","<",">","1","2","3","x","D","h"] * 5
 
-def load_data(path, set_flag=False):
+def load_data(path, set_flag=False, is_header=False):
     """
     Load dataset.
 
@@ -13,13 +13,19 @@ def load_data(path, set_flag=False):
     :type path: str
     :param set_flag: activation set flag
     :type set_flag: bool
+    :param is_header: true if file has header
+    :type is_header: bool
     :return: data as numpy array
     """
     file = open(path, "r")
     data = []
     set_list = []
+    header = []
     for line in file:
         splitted_line = line.split(",")
+        if is_header:
+            header = splitted_line
+            continue
         if not set_flag:
             data.append(list(map(float, splitted_line)))
         else:
