@@ -5,40 +5,29 @@ COLORS = ['blue', 'green', 'red', 'black','orange','mediumblue', 'green', 'india
           'seagreen', 'goldenrod', 'turquoise', 'darkorange', 'dimgray', 'lawngreen', 'darkblue', 'lime', 'cadetblue', 'mistyrose', 'mediumorchid', 'mediumseagreen', 'lightyellow', 'mediumspringgreen', 'black', 'darkviolet', 'lightskyblue', 'silver', 'maroon', 'darkkhaki', 'aliceblue', 'gray', 'lightgrey', 'darkslategray', 'magenta', 'palegoldenrod', 'steelblue', 'yellow']
 MARKERS = [".","o","o","s","p","*","+","X","|","v","^","H","<",">","1","2","3","x","D","h"] * 5
 
-def load_data(path, set_flag=False, is_header=False):
+def load_data(path, is_header=False):
     """
     Load dataset.
 
     :param path: file path
     :type path: str
-    :param set_flag: activation set flag
-    :type set_flag: bool
     :param is_header: true if file has header
     :type is_header: bool
-    :return: data as numpy array
+    :return: data and header as tuple (numpy array, str list)
     """
     file = open(path, "r")
     data = []
-    set_list = []
     header = []
     for line in file:
         splitted_line = line.split(",")
         if is_header:
-            header = splitted_line
+            splitted_line[-1] = splitted_line[-1].strip()
+            header.extend(list(map(str, splitted_line)))
             is_header = False
             continue
-        if not set_flag:
-            data.append(list(map(float, splitted_line)))
-        else:
-            data.append(list(map(float, splitted_line[:-1])))
-            s = splitted_line[-1].strip()
-            set_list.append(int(s))
+        data.append(list(map(float, splitted_line)))
     result = np.array(data)
-    if set_flag:
-        set_list = np.array(set_list)
-        set_list = set_list.reshape(set_list.shape[0], 1)
-        result = np.concatenate((data, set_list), axis=1)
-    return result
+    return (result, header)
 
 
 def format_number(num):
@@ -111,29 +100,41 @@ def plot_func(
     plt.show()
 
 
-def impedance_plot(data, set_index):
+def impedance_plot(data, SBH, catalyst_loading, header=None):
     """
     Impedance plot function.
 
     :param data: input data
     :type data: numpy array
-    :param set_index: activation set index
-    :type set_index: int
+    :param SBH: sbh weightpercent
+    :type SBH: float
+    :param catalyst_loading: catalyst loading
+    :type catalyst_loading: float
+    :param header: input header
+    :type header: list
     :return: None
     """
-    filtered_data = data[data[:, 3] == set_index]
+    voltage_col = 2
+    sbh_col = 3
+    load_col = 4
+    if len(header) > 0:
+        voltage_col = header.index('applied_voltage')
+        sbh_col = header.index('sbh_weight_percent')
+        load_col = header.index('catalyst_loading')
+    voltages = sorted(list(set(data[:, voltage_col])))
     x_plot_data = []
     y_plot_data = []
-    voltages = sorted(list(set(filtered_data[:, 2])))
+    filtered_data = data[data[:, sbh_col] == SBH]
+    filtered_data = filtered_data[filtered_data[:, load_col] == catalyst_loading]
     for v in voltages:
-        x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
-        y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
+        x_plot_data.append(filtered_data[filtered_data[:, voltage_col] == v][:, 0])
+        y_plot_data.append(filtered_data[filtered_data[:, voltage_col] == v][:, 1])
     legend = list(map(lambda x: "V: "+format_number(x)+"V",voltages))
     color = COLORS[:len(legend)]
     marker = MARKERS[:len(legend)]
     x_label = "ZReal(Ohm)"
     y_label = "ZImage(Ohm)"
-    title = "Set " + str(set_index)
+    title = "SBH = {} | Catalyst Loading = {}".format(SBH, catalyst_loading)
 
     plot_func(
         x_plot_data,
