@@ -1,8 +1,38 @@
+import numpy as np
 import matplotlib.pyplot as plt
 
 COLORS = ['blue', 'green', 'red', 'black','orange','mediumblue', 'green', 'indianred', 'darkorchid', 'seashell', 'teal', 'darkgrey', 'midnightblue', 'lightslategray', 'cornsilk',
           'seagreen', 'goldenrod', 'turquoise', 'darkorange', 'dimgray', 'lawngreen', 'darkblue', 'lime', 'cadetblue', 'mistyrose', 'mediumorchid', 'mediumseagreen', 'lightyellow', 'mediumspringgreen', 'black', 'darkviolet', 'lightskyblue', 'silver', 'maroon', 'darkkhaki', 'aliceblue', 'gray', 'lightgrey', 'darkslategray', 'magenta', 'palegoldenrod', 'steelblue', 'yellow']
 MARKERS = [".","o","o","s","p","*","+","X","|","v","^","H","<",">","1","2","3","x","D","h"] * 5
+
+def load_data(path, set_flag=False):
+    """
+    Load dataset.
+
+    :param path: file path
+    :type path: str
+    :param set_flag: activation set flag
+    :type set_flag: bool
+    :return: data as numpy array
+    """
+    file = open(path, "r")
+    data = []
+    set_list = []
+    for line in file:
+        splitted_line = line.split(",")
+        if not set_flag:
+            data.append(list(map(float, splitted_line)))
+        else:
+            data.append(list(map(float, splitted_line[:-1])))
+            s = splitted_line[-1].strip()
+            set_list.append(int(s))
+    result = np.array(data)
+    if set_flag:
+        set_list = np.array(set_list)
+        set_list = set_list.reshape(set_list.shape[0], 1)
+        result = np.concatenate((data, set_list), axis=1)
+    return result
+
 
 def format_number(num):
     """
