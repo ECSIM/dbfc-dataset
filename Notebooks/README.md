@@ -11,7 +11,10 @@
 		<td align="center"><b>Travis</b></td>
 		<td align="center"><b>Appveyor</b></td>
 	</tr>
-
+	<tr>
+		<td align="center"><b>master</b></td>
+		<td align="center"><a href="https://travis-ci.org/ECSIM/dbfc-dataset"><img src="https://travis-ci.org/ECSIM/dbfc-dataset.svg?branch=master"></a></td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/dbfc-dataset"><img src="https://ci.appveyor.com/api/projects/status/?svg=true"></a></td>
 </table>
 
 ## Interactive Notebooks
