@@ -125,7 +125,7 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
             x_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 0])
             y_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 1])
         legend = list(map(lambda x: "SBH: "+format_number(x),SBHs))
-        title = "Applied Voltage = {} | Catalyst Loading = {}".format(V, CL)
+        title = "V: {}, CL: {}".format(V, CL)
 
     elif CL is None:
         filtered_data = data[data[:, 3] == SBH]
@@ -134,7 +134,7 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
             x_plot_data.append(filtered_data[filtered_data[:, 4] == loading][:, 0])
             y_plot_data.append(filtered_data[filtered_data[:, 4] == loading][:, 1])
         legend = list(map(lambda x: "Catalyst loading: "+format_number(x),loadings))
-        title = "Applied Voltage = {} | SBH = {}".format(V, SBH)
+        title = "V: {}, SBH: {}".format(V, SBH)
 
     else:
         filtered_data = data[data[:, 3] == SBH]
@@ -143,7 +143,7 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
             x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
             y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
         legend = list(map(lambda x: "V: "+format_number(x)+"V",voltages))
-        title = "SBH = {} | Catalyst Loading = {}".format(SBH, CL)
+        title = "SBH: {}, CL: {}".format(SBH, CL)
     
     color = COLORS[:len(legend)]
     marker = MARKERS[:len(legend)]
