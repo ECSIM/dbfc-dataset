@@ -114,37 +114,21 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
     :return: None
     """
     voltages = sorted(list(set(data[:, 2])))
-    SBHs = sorted(list(set(data[:, 3])))
-    loadings = sorted(list(set(data[:, 4])))
     x_plot_data = []
     y_plot_data = []
-    if SBH is None:
-        filtered_data = data[data[:, 2] == V]
+    filtered_data = data
+    title = ""
+    if SBH is not None:
+        filtered_data = filtered_data[filtered_data[:, 3] == SBH]
+        title += "SBH: {},".format(SBH)
+    if CL is not None:
         filtered_data = filtered_data[filtered_data[:, 4] == CL]
-        for sbh in SBHs:
-            x_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 0])
-            y_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 1])
-        legend = list(map(lambda x: "SBH: "+format_number(x),SBHs))
-        title = "V: {}, CL: {}".format(V, CL)
+        title += " CL: {} ".format(CL)
+    for v in voltages:
+        x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
+        y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
+    legend = list(map(lambda x: "V: "+format_number(x)+"V",voltages))
 
-    elif CL is None:
-        filtered_data = data[data[:, 3] == SBH]
-        filtered_data = filtered_data[filtered_data[:, 2] == V]
-        for loading in loadings:
-            x_plot_data.append(filtered_data[filtered_data[:, 4] == loading][:, 0])
-            y_plot_data.append(filtered_data[filtered_data[:, 4] == loading][:, 1])
-        legend = list(map(lambda x: "Catalyst loading: "+format_number(x),loadings))
-        title = "V: {}, SBH: {}".format(V, SBH)
-
-    else:
-        filtered_data = data[data[:, 3] == SBH]
-        filtered_data = filtered_data[filtered_data[:, 4] == CL]
-        for v in voltages:
-            x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
-            y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
-        legend = list(map(lambda x: "V: "+format_number(x)+"V",voltages))
-        title = "SBH: {}, CL: {}".format(SBH, CL)
-    
     color = COLORS[:len(legend)]
     marker = MARKERS[:len(legend)]
     x_label = "ZReal(Ohm)"
@@ -178,7 +162,7 @@ def polarization_plot(data, SBH=None, CL=None):
     title = ""
     if SBH is not None :
         filtered_data = filtered_data[filtered_data[:, 3] == SBH]
-        title += "SBH: {}".format(str(SBH))
+        title += "SBH: {},".format(str(SBH))
     if CL is not None :
         filtered_data = filtered_data[filtered_data[:, 4] == CL]
         title += " CL: {}".format(str(CL))
