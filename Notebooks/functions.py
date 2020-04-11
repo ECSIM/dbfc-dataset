@@ -120,10 +120,10 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
     title = ""
     if SBH is not None:
         filtered_data = filtered_data[filtered_data[:, 3] == SBH]
-        title += "SBH: {} ".format(SBH)
+        title += "SBH: {}(%) ".format(SBH)
     if CL is not None:
         filtered_data = filtered_data[filtered_data[:, 4] == CL]
-        title += " CL: {} ".format(CL)
+        title += " CL: {}(mg/cm2)".format(CL)
     for v in voltages:
         x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
         y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
@@ -162,10 +162,10 @@ def polarization_plot(data, SBH=None, CL=None):
     title = ""
     if SBH is not None :
         filtered_data = filtered_data[filtered_data[:, 3] == SBH]
-        title += "SBH: {} ".format(str(SBH))
+        title += "SBH: {}(%) ".format(str(SBH))
     if CL is not None :
         filtered_data = filtered_data[filtered_data[:, 4] == CL]
-        title += " CL: {}".format(str(CL))
+        title += " CL: {}(mg/cm2)".format(str(CL))
     data_I = filtered_data[:, 0]
     data_V = filtered_data[:, 1]
     data_P = filtered_data[:, 2]
