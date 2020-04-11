@@ -5,29 +5,26 @@ COLORS = ['blue', 'green', 'red', 'black','orange','mediumblue', 'green', 'india
           'seagreen', 'goldenrod', 'turquoise', 'darkorange', 'dimgray', 'lawngreen', 'darkblue', 'lime', 'cadetblue', 'mistyrose', 'mediumorchid', 'mediumseagreen', 'lightyellow', 'mediumspringgreen', 'black', 'darkviolet', 'lightskyblue', 'silver', 'maroon', 'darkkhaki', 'aliceblue', 'gray', 'lightgrey', 'darkslategray', 'magenta', 'palegoldenrod', 'steelblue', 'yellow']
 MARKERS = [".","o","o","s","p","*","+","X","|","v","^","H","<",">","1","2","3","x","D","h"] * 5
 
-def load_data(path, is_header=False):
+def load_data(path):
     """
     Load dataset.
 
     :param path: file path
     :type path: str
-    :param is_header: true if file has header
-    :type is_header: bool
-    :return: data and header as tuple (numpy array, str list)
+    :return: data as numpy arr
     """
     file = open(path, "r")
     data = []
     header = []
     for line in file:
         splitted_line = line.split(",")
-        if is_header:
+        if len(header) == 0:
             splitted_line[-1] = splitted_line[-1].strip()
             header.extend(list(map(str, splitted_line)))
-            is_header = False
             continue
         data.append(list(map(float, splitted_line)))
     result = np.array(data)
-    return (result, header)
+    return result
 
 
 def format_number(num):
@@ -100,42 +97,59 @@ def plot_func(
     plt.show()
 
 
-def impedance_plot(data, SBH, catalyst_loading, header=None):
+def impedance_plot(data, V=None, SBH=None, CL=None):
     """
     Impedance plot function.
 
     :param data: input data
     :type data: numpy array
-    :param SBH: sbh weightpercent
-    :type SBH: float
-    :param catalyst_loading: catalyst loading
-    :type catalyst_loading: float
     :param header: input header
-    :type header: list
+    :type header: str list
+    :param V: applied voltage
+    :type V: float
+    :param SBH: sbh weight percent
+    :type SBH: float
+    :param CL: catalyst loading
+    :type CL: float
     :return: None
     """
-    voltage_col = 2
-    sbh_col = 3
-    load_col = 4
-    if len(header) > 0:
-        voltage_col = header.index('applied_voltage')
-        sbh_col = header.index('sbh_weight_percent')
-        load_col = header.index('catalyst_loading')
-    voltages = sorted(list(set(data[:, voltage_col])))
+    voltages = sorted(list(set(data[:, 2])))
+    SBHs = sorted(list(set(data[:, 3])))
+    loadings = sorted(list(set(data[:, 4])))
     x_plot_data = []
     y_plot_data = []
-    filtered_data = data[data[:, sbh_col] == SBH]
-    filtered_data = filtered_data[filtered_data[:, load_col] == catalyst_loading]
-    for v in voltages:
-        x_plot_data.append(filtered_data[filtered_data[:, voltage_col] == v][:, 0])
-        y_plot_data.append(filtered_data[filtered_data[:, voltage_col] == v][:, 1])
-    legend = list(map(lambda x: "V: "+format_number(x)+"V",voltages))
+    if SBH is None:
+        filtered_data = data[data[:, 2] == V]
+        filtered_data = filtered_data[filtered_data[:, 4] == CL]
+        for sbh in SBHs:
+            x_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 0])
+            y_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 1])
+        legend = list(map(lambda x: "SBH: "+format_number(x),SBHs))
+        title = "Applied Voltage = {} | Catalyst Loading = {}".format(V, CL)
+
+    elif CL is None:
+        filtered_data = data[data[:, 3] == SBH]
+        filtered_data = filtered_data[filtered_data[:, 2] == V]
+        for loading in loadings:
+            x_plot_data.append(filtered_data[filtered_data[:, 4] == loading][:, 0])
+            y_plot_data.append(filtered_data[filtered_data[:, 4] == loading][:, 1])
+        legend = list(map(lambda x: "Catalyst loading: "+format_number(x),loadings))
+        title = "Applied Voltage = {} | SBH = {}".format(V, SBH)
+
+    else:
+        filtered_data = data[data[:, 3] == SBH]
+        filtered_data = filtered_data[filtered_data[:, 4] == CL]
+        for v in voltages:
+            x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
+            y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
+        legend = list(map(lambda x: "V: "+format_number(x)+"V",voltages))
+        title = "SBH = {} | Catalyst Loading = {}".format(SBH, CL)
+    
     color = COLORS[:len(legend)]
     marker = MARKERS[:len(legend)]
     x_label = "ZReal(Ohm)"
     y_label = "ZImage(Ohm)"
-    title = "SBH = {} | Catalyst Loading = {}".format(SBH, catalyst_loading)
-
+    
     plot_func(
         x_plot_data,
         y_plot_data,
