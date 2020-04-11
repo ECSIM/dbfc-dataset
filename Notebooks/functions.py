@@ -162,37 +162,32 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
         multi=True)
 
 
-def polarization_plot(data, RH, P, NP=None, MC=None):
+def polarization_plot(data, SBH=None, CL=None):
     """
     Polarization plot function.
 
     :param data: input data
     :type data: numpy array
-    :param RH: Relative humidity (RH%)
-    :type RH: float
-    :param P: Pressure (psi)
-    :type P: float
-    :param NP: Nafion percent
-    :type NP: float
-    :param MC: Membrane compression
-    :type MC: float
+    :param SBH: sbh weight percent
+    :type SBH: float
+    :param CL: catalyst loading
+    :type CL: float
     :return: None
     """
-    filtered_data = data[data[:, 4] == RH]
-    filtered_data = filtered_data[filtered_data[:, 3] == P]
-    title = "RH: {}% , P: {}psig".format(str(RH), str(P))
-    if NP is not None :
-        filtered_data = filtered_data[filtered_data[:, 6] == NP]
-        title += ", NP: {}".format(str(NP))
-    if MC is not None :
-        filtered_data = filtered_data[filtered_data[:, 5] == MC]
-        title += ", MC: {}".format(str(MC))
+    filtered_data = data
+    title = ""
+    if SBH is not None :
+        filtered_data = filtered_data[filtered_data[:, 3] == SBH]
+        title += "SBH: {}".format(str(SBH))
+    if CL is not None :
+        filtered_data = filtered_data[filtered_data[:, 4] == CL]
+        title += " CL: {}".format(str(CL))
     data_I = filtered_data[:, 0]
     data_V = filtered_data[:, 1]
     data_P = filtered_data[:, 2]
     color1 = COLORS[0]
     color2 = COLORS[1]
-    x_label = "Current density (mA/cm2 )"
+    x_label = "Current density (mA/cm2)"
     y_label_1 = "Cell voltage (V)"
     y_label_2 = "Power density (mW/cm2)"
 
