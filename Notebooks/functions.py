@@ -132,7 +132,7 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
     color = COLORS[:len(legend)]
     marker = MARKERS[:len(legend)]
     x_label = "ZReal(Ohm)"
-    y_label = "ZImage(Ohm)"
+    y_label = "-ZImage(Ohm)"
     
     plot_func(
         x_plot_data,
