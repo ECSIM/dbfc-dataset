@@ -126,20 +126,20 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
     if CL is not None:
         filtered_data = filtered_data[filtered_data[:, 4] == CL]
         title += " CL: {}(mg/cm2)".format(CL)
-    Vs = sorted(list(set(filtered_data[:, 2])))
-    SBHs = sorted(list(set(filtered_data[:, 3])))
-    CLs = sorted(list(set(filtered_data[:, 4])))
     if V is None:
+        Vs = sorted(list(set(filtered_data[:, 2])))
         for v in Vs:
             x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
             y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
         legend = list(map(lambda x: "V: "+format_number(x)+"V",Vs))
-    if SBH is None:
+    elif SBH is None:
+        SBHs = sorted(list(set(filtered_data[:, 3])))
         for sbh in SBHs:
             x_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 0])
             y_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 1])
         legend = list(map(lambda x: "SBH: "+format_number(x)+"(%)",SBHs))
-    if CL is None:
+    elif CL is None:
+        CLs = sorted(list(set(filtered_data[:, 4])))
         for cl in CLs:
             x_plot_data.append(filtered_data[filtered_data[:, 4] == cl][:, 0])
             y_plot_data.append(filtered_data[filtered_data[:, 4] == cl][:, 1])
