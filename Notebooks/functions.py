@@ -181,7 +181,7 @@ def polarization_plot(data, SBH=None, CL=None):
     title = ""
     if SBH is not None :
         filtered_data = filtered_data[filtered_data[:, 3] == SBH]
-        title += "SBH: {}(%) ".format(str(SBH))
+        title += "SBH: {}(%) ,".format(str(SBH))
     if CL is not None :
         filtered_data = filtered_data[filtered_data[:, 4] == CL]
         title += " CL: {}(mg/cm2)".format(str(CL))
