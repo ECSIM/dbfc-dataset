@@ -31,3 +31,43 @@ Column 3: Power density (mW/cm2)
 Column 4: Weight percent of SBH (%) 
 Column 5: Pd/C anode catalyst loading (mg/cm2)
 Cell polarization curves of 8.8 and 17.7 Pd/C loading in DBFCs fueled by solution containing 5 wt% of SBH with O2 as oxidant.
+
+0.05wt%:
+CL(mg/cm2)    NOI
+4.4           0
+8.8           0
+13.4          0
+17.7          0
+
+1wt%:
+CL(mg/cm2)    NOI
+4.4           0
+8.8           0
+13.4          0
+17.7          0
+
+3wt%:
+CL(mg/cm2)    NOI
+4.4           0
+8.8           0
+13.4          0
+17.7          0
+
+5wt%:
+CL(mg/cm2)    NOI
+4.4           0
+8.8           15
+13.4          0
+17.7          16
+
+8wt%:
+CL(mg/cm2)    NOI
+4.4           0
+8.8           0
+13.4          0
+17.7          0
+
+Total NOI : 31
+
+CL: Catalyst loading
+NOI: Number of instances
