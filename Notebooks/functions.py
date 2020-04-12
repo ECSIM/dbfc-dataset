@@ -117,33 +117,37 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
     y_plot_data = []
     filtered_data = data
     title = ""
-    if V is not None:
-        filtered_data = filtered_data[filtered_data[:, 2] == V]
-        title += "V: {}(V)".format(V)
-    if SBH is not None:
-        filtered_data = filtered_data[filtered_data[:, 3] == SBH]
-        title += " SBH: {}(%) ".format(SBH)
-    if CL is not None:
-        filtered_data = filtered_data[filtered_data[:, 4] == CL]
-        title += " CL: {}(mg/cm2)".format(CL)
+    legend = []
     if V is None:
+        filtered_data = filtered_data[filtered_data[:, 3] == SBH]
+        if len(filtered_data[0]) > 4:
+            filtered_data = filtered_data[filtered_data[:, 4] == CL]
+        title = "SBH: {}(%) , CL: {}(mg/cm2)".format(str(SBH), str(CL))
         Vs = sorted(list(set(filtered_data[:, 2])))
         for v in Vs:
             x_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 0])
             y_plot_data.append(filtered_data[filtered_data[:, 2] == v][:, 1])
         legend = list(map(lambda x: "V: "+format_number(x)+"V",Vs))
     elif SBH is None:
+        filtered_data = filtered_data[filtered_data[:, 2] == V]
+        if len(filtered_data[0]) > 4:
+            filtered_data = filtered_data[filtered_data[:, 4] == CL]
+        title = "V: {}(V) , CL: {}(mg/cm2)".format(str(V), str(CL))
         SBHs = sorted(list(set(filtered_data[:, 3])))
         for sbh in SBHs:
             x_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 0])
             y_plot_data.append(filtered_data[filtered_data[:, 3] == sbh][:, 1])
         legend = list(map(lambda x: "SBH: "+format_number(x)+"(%)",SBHs))
-    elif CL is None:
-        CLs = sorted(list(set(filtered_data[:, 4])))
-        for cl in CLs:
-            x_plot_data.append(filtered_data[filtered_data[:, 4] == cl][:, 0])
-            y_plot_data.append(filtered_data[filtered_data[:, 4] == cl][:, 1])
-        legend = list(map(lambda x: "CL: "+format_number(x)+"(mg/cm2)",CLs))
+    else:
+        filtered_data = filtered_data[filtered_data[:, 2] == V]
+        filtered_data = filtered_data[filtered_data[:, 3] == SBH]
+        title = "V: {}(V) , SBH: {}(%)".format(str(V), str(SBH))
+        if len(filtered_data[0]) > 4: 
+            CLs = sorted(list(set(filtered_data[:, 4])))
+            for cl in CLs:
+                x_plot_data.append(filtered_data[filtered_data[:, 4] == cl][:, 0])
+                y_plot_data.append(filtered_data[filtered_data[:, 4] == cl][:, 1])
+            legend = list(map(lambda x: "CL: "+format_number(x)+"(mg/cm2)",CLs))
     color = COLORS[:len(legend)]
     marker = MARKERS[:len(legend)]
     x_label = "ZReal(Ohm)"
