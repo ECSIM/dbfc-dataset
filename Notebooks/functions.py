@@ -11,7 +11,7 @@ def load_data(path):
 
     :param path: file path
     :type path: str
-    :return: data as numpy arr
+    :return: data as numpy array
     """
     file = open(path, "r")
     data = []
