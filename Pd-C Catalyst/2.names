@@ -30,4 +30,25 @@ Column 2: Zimaginary (ohm.cm2)
 Column 3: Applied voltage (V)
 Column 4: Weight percent of SBH (%)
 Column 5: Pd/C anode catalyst loading (mg/cm2)
-Nyquest spectra of 8.8 and 17.7 (mg/cm2) Pd/C loading in DBFC fueled by solution containing 5 wt% of SBH and O2 as oxidant at 0.3V, 0.5V and 0.7V 
+Nyquest spectra of 8.8 and 17.7 (mg/cm2) Pd/C loading in DBFC fueled by solution containing 5 wt% of SBH and O2 as oxidant at 0.3V, 0.5V and 0.7V
+
+5wt%:
+CL(mg/cm2)    AV(V)    NOI
+4.4           0.3      0
+              0.5      0
+              0.7      0
+8.8           0.3      69
+              0.5      70
+              0.7      69
+13.4          0.3      0
+              0.5      0
+              0.7      0
+17.7          0.3      62
+              0.5      63
+              0.7      58
+
+Total NOI : 391
+
+CL: Catalyst loading
+AV: Applied voltage
+NOI: Number of instances
