@@ -4,7 +4,7 @@ from nbconvert.preprocessors import ExecutePreprocessor
 from art import tprint
 
 NOTEBOOKS_LIST = [
-    "Pd decorated Ni–Co/rGO Catalyst",
+    "Pd decorated Ni–Co_rGO Catalyst",
     "Pd-C Catalyst",
     "Pt-C Catalyst"]
 
