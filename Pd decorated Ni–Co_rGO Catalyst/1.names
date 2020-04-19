@@ -1,0 +1,98 @@
+Pd decorated Ni–Co/rGO Catalyst in DBFC
+Impedance : Various Pd decorated Ni–Co/rGO Loading and SBH%
+
+SOURCE:
+Electrochemistry Simulation Tools (ECSIM) Organization 
+Website: https://www.ecsim.ir
+Repository: https://github.com/ECSIM/dbfc-dataset
+Data paper: 
+Date received: 17 December 2019
+ 
+ELECTRODES STRUCTURE:
+Anode catalyst: Pd decorated Ni–Co/rGO (4.4, 8.8, 13.4, 17.7 mg/cm2)
+Anode support: Nickel foam
+Cathode catalyst: HypermecTM  K14
+Cathode support: Carbon cloth
+Surface area: 4.5 cm2
+
+ELECTROLYTE CONDITION:
+2M KOH + different concentration of Sodium Borohydride (SBH) {1,3,5,8wt.%}
+
+OPERATION CONDITION:
+1) Room temperature
+2) Run electrochemical impedance spectroscopy study at operating DC voltages of 0.3V, 0.5V, 0.7V
+
+DATA DESCRIPTION:
+*All numeric-valued
+Column 1: Zreal (ohm.cm2)
+Column 2: Zimaginary (ohm.cm2)
+Column 3: Applied voltage (V)
+Column 4: Weight percent of SBH (%)
+Column 5: Pd decorated Ni–Co/rGO anode catalyst loading (mg/cm2)
+Nyquest spectra of various Pd decorated Ni–Co/rGO anode loading in DBFC fueled by solution containing 1, 3, 5, and 8 wt% of SBH at 0.3V, 0.5V and 0.7V
+
+1wt%:
+CL(mg/cm2)    AV(V)    NOI
+4.4           0.3      56
+              0.5      68
+              0.7      68
+8.8           0.3      73
+              0.5      69
+              0.7      69
+13.3          0.3      72
+              0.5      70
+              0.7      69
+17.7          0.3      69
+              0.5      70
+              0.7      70
+
+3wt%:
+CL(mg/cm2)    AV(V)    NOI
+4.4           0.3      58
+              0.5      66
+              0.7      66
+8.8           0.3      68
+              0.5      69
+              0.7      67
+13.3          0.3      58
+              0.5      60
+              0.7      69
+17.7          0.3      64
+              0.5      64
+              0.7      59
+
+5wt%:
+CL(mg/cm2)    AV(V)    NOI
+4.4           0.3      67
+              0.5      64
+              0.7      62
+8.8           0.3      68
+              0.5      72
+              0.7      67
+13.3          0.3      75
+              0.5      61
+              0.7      62
+17.7          0.3      64
+              0.5      65
+              0.7      60
+
+8wt%:
+CL(mg/cm2)    AV(V)    NOI
+4.4           0.3      55
+              0.5      67
+              0.7      67
+8.8           0.3      67
+              0.5      68
+              0.7      71
+13.3          0.3      67
+              0.5      65
+              0.7      64
+17.7          0.3      68
+              0.5      69
+              0.7      66
+
+Total NOI : 3172
+
+CL: Catalyst loading
+AV: Applied voltage
+NOI: Number of instances
