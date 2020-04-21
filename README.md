@@ -7,7 +7,7 @@ This dataset includes Direct Borohydride Fuel Cell (DBFC) impedance and polariza
 ## Tests
 
 
-1. [Acta Catalyst](https://github.com/ECSIM/dbfc-dataset/tree/master/Acta%20Catalyst)
+1. [Pd-Decorated-Ni-Co/rGO Catalyst](https://github.com/ECSIM/dbfc-dataset/tree/master/Pd-Decorated-Ni-Co_rGO%20Catalyst)
 2. [Pd-C Catalyst](https://github.com/ECSIM/dbfc-dataset/tree/master/Pd-C%20Catalyst)
 3. [Pt-C Catalyst](https://github.com/ECSIM/dbfc-dataset/tree/master/Pt-C%20Catalyst)
 

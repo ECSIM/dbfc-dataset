@@ -1,6 +1,6 @@
 # Notebooks
 
-1. [Acta Catalyst](https://nbviewer.jupyter.org/github/ECSIM/dbfc-dataset/blob/master/Notebooks/Acta%20Catalyst.ipynb)
+1. [Pd-Decorated-Ni–Co_rGO Catalyst](https://nbviewer.jupyter.org/github/ECSIM/dbfc-dataset/blob/master/Notebooks/Pd-Decorated-Ni-Co_rGO%20Catalyst.ipynb)
 2. [Pd-C Catalyst](https://nbviewer.jupyter.org/github/ECSIM/dbfc-dataset/blob/master/Notebooks/Pd-C%20Catalyst.ipynb)
 3. [Pt-C Catalyst](https://nbviewer.jupyter.org/github/ECSIM/dbfc-dataset/blob/master/Notebooks/Pt-C%20Catalyst.ipynb)
 
