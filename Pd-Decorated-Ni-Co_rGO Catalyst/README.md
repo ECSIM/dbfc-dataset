@@ -1,4 +1,4 @@
-# Pd decorated Ni–Co/rGO Catalyst in DBFC
+# Pd Decorated Ni–Co/rGO Catalyst in DBFC
 
 ## Conditions
 
@@ -20,7 +20,7 @@ Surface area: 4.5 cm2
 
 ## Files
 
-### 1- Impedance : Various Pd decorated Ni–Co/rGO Loading and SBH%
+### 1- Impedance : Various Pd Decorated Ni–Co/rGO Loading and SBH%
 
 
 ```
