@@ -24,7 +24,7 @@ We have provided some **Jupyter Notebooks** to visualize the data, visit [here](
 If you use this dataset in your research, we would appreciate citations to the following paper :
 
 <pre>
---
+S. Hamidi, S. Sabouri, S. Haghighi, K. Askari, Experimental Dataset of Electrochemical Efficiency of a Direct Borohydride Fuel Cell (DBFC) with Pd/C, Pt/C and Pd Decorated Ni–Co/rGO Anode Catalysts, ChemRxiv, (2020). doi: 10.26434/chemrxiv.12174438.
 </pre>
 <pre>
 
