@@ -2,12 +2,12 @@
 
 ## Overview
 
-Dataset includes Direct Borohydride Fuel Cell (DBFC) impedance and polarization test in anode with Pd/C, Pt/C and Acta catalysts. In fact, different concentration of Sodium Borohydride (SBH), applied voltages and various anode catalysts loading with explanation of experimental details of electrochemical analysis are considered in data. Voltage, power density and resistance of DBFC change as a function of weight percent of SBH (%), applied voltage and amount of anode catalyst loading that are evaluated by polarization and impedance curves with using appropriate equivalent circuit of fuel cell. Can be stated that interpretation of electrochemical behavior changes by the data of related cell is inevitable, which can be useful in simulation, power source investigation and depth analysis in DB fuel cell researches.
+This dataset includes Direct Borohydride Fuel Cell (DBFC) impedance and polarization test in anode with Pd/C, Pt/C and Pd decorated Ni–Co/rGO catalysts. In fact, different concentration of Sodium Borohydride (SBH), applied voltages and various anode catalysts loading with explanation of experimental details of electrochemical analysis are considered in data. Voltage, power density and resistance of DBFC change as a function of weight percent of SBH (%), applied voltage and amount of anode catalyst loading that are evaluated by polarization and impedance curves with using appropriate equivalent circuit of fuel cell. Can be stated that interpretation of electrochemical behavior changes by the data of related cell is inevitable, which can be useful in simulation, power source investigation and depth analysis in DB fuel cell researches.
 
 ## Tests
 
 
-1. [Acta Catalyst](https://github.com/ECSIM/dbfc-dataset/tree/master/Acta%20Catalyst)
+1. [Pd-Decorated-Ni-Co/rGO Catalyst](https://github.com/ECSIM/dbfc-dataset/tree/master/Pd-Decorated-Ni-Co_rGO%20Catalyst)
 2. [Pd-C Catalyst](https://github.com/ECSIM/dbfc-dataset/tree/master/Pd-C%20Catalyst)
 3. [Pt-C Catalyst](https://github.com/ECSIM/dbfc-dataset/tree/master/Pt-C%20Catalyst)
 

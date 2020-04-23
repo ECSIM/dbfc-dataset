@@ -1,9 +1,9 @@
-# Acta Catalyst in DBFC
+# Pd Decorated Ni–Co/rGO Catalyst in DBFC
 
 ## Conditions
 
 ### ELECTRODES STRUCTURE:
-Anode catalyst: Acta anodeTM (4.4, 8.8, 13.4, 17.7 mg/cm2)
+Anode catalyst: Pd decorated Ni–Co/rGO (4.4, 8.8, 13.4, 17.7 mg/cm2)
 Anode support: Nickel foam
 Cathode catalyst: HypermecTM  K14
 Cathode support: Carbon cloth
@@ -20,7 +20,7 @@ Surface area: 4.5 cm2
 
 ## Files
 
-### 1- Impedance : Various Acta AnodeTM Loading and SBH%
+### 1- Impedance : Various Pd Decorated Ni–Co/rGO Loading and SBH%
 
 
 ```
@@ -32,7 +32,7 @@ Column 3: Applied voltage (V)
 
 Column 4: Weight percent of SBH (%)
 
-Column 5: Acta anode catalyst loading (mg/cm2)
+Column 5: Pd decorated Ni–Co/rGO anode catalyst loading (mg/cm2)
 ```			
 	
 
