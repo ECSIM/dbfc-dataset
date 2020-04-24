@@ -152,8 +152,8 @@ def impedance_plot(data, V=None, SBH=None, CL=None):
             legend = list(map(lambda x: "CL: "+format_number(x)+"(mg/cm2)",CLs))
     color = COLORS[:len(legend)]
     marker = MARKERS[:len(legend)]
-    x_label = "ZReal(Ohm)"
-    y_label = "-ZImage(Ohm)"
+    x_label = "ZReal(Ohm.cm2)"
+    y_label = "-ZImage(Ohm.cm2)"
     
     plot_func(
         x_plot_data,
