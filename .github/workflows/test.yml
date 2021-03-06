@@ -25,4 +25,4 @@ jobs:
         pip install -r requirements.txt
     - name: Notebook tests
       run: |
-        Notebooks/test.py
+        python Notebooks/test.py
