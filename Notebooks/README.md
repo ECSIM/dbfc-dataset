@@ -9,7 +9,6 @@
 	<tr>
 		<td align="center">CI</td>
 		<td align="center"><img src="https://github.com/ECSIM/dbfc-dataset/workflows/CI/badge.svg?branch=master"></td>
-		<td align="center"><img src="https://github.com/ECSIM/dbfc-dataset/workflows/CI/badge.svg?branch=dev"></td>
 	</tr>
 </table>
 
