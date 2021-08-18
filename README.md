@@ -46,7 +46,13 @@ S. Hamidi, S. Sabouri, S. Haghighi, K. Askari, Experimental Dataset of Electroch
 
 <a href="https://github.com/ECSIM/dbfc-dataset/blob/master/LICENSE"><img src="images/CC-BY.png"></a>
 
-## Donate to our project
+## Show Your Support
+
+<h3>Star This Repo</h3>					
+
+Give a ⭐️ if this project helped you!  
+
+<h3>Donate to Our Project</h3>	
 								
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 
