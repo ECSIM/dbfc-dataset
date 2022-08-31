@@ -19,6 +19,19 @@ This dataset includes Direct Borohydride Fuel Cell (DBFC) impedance and polariza
 
 We have provided some **Jupyter Notebooks** to visualize the data, visit [here](https://github.com/ECSIM/dbfc-dataset/tree/master/Notebooks)
 
+
+## Issues & Bug Reports			
+
+Just fill an issue and describe it. We'll check it ASAP!							
+or send an email to [data@ecsim.ir](mailto:data@ecsim.ir "data@ecsim.ir"). 
+
+You can also join our discord server			
+
+<a href="https://discord.gg/ZwrNZYVM4G">
+  <img src="https://img.shields.io/discord/1006472275920425012.svg?style=for-the-badge" alt="Discord Channel">
+</a>
+
+
 ## Cite
 
 If you use this dataset in your research, we would appreciate citations to the following paper :
