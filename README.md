@@ -27,7 +27,7 @@ or send an email to [data@ecsim.ir](mailto:data@ecsim.ir "data@ecsim.ir").
 
 You can also join our discord server			
 
-<a href="https://discord.gg/ZwrNZYVM4G">
+<a href="https://discord.gg/NDwgZadaDH">
   <img src="https://img.shields.io/discord/1006472275920425012.svg?style=for-the-badge" alt="Discord Channel">
 </a>
 
