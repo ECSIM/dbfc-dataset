@@ -1,5 +1,7 @@
 # Single DBFC Dataset
 
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ECSIM/dbfc-dataset?style=for-the-badge">
+
 ## Overview
 
 This dataset includes Direct Borohydride Fuel Cell (DBFC) impedance and polarization test in anode with Pd/C, Pt/C and Pd decorated Ni–Co/rGO catalysts. In fact, different concentration of Sodium Borohydride (SBH), applied voltages and various anode catalysts loading with explanation of experimental details of electrochemical analysis are considered in data. Voltage, power density and resistance of DBFC change as a function of weight percent of SBH (%), applied voltage and amount of anode catalyst loading that are evaluated by polarization and impedance curves with using appropriate equivalent circuit of fuel cell. Can be stated that interpretation of electrochemical behavior changes by the data of related cell is inevitable, which can be useful in simulation, power source investigation and depth analysis in DB fuel cell researches.
@@ -34,13 +36,12 @@ You can also join our discord server
 
 ## Cite
 
-If you use this dataset in your research, we would appreciate citations to the following paper :
+If you use this dataset in your research, we would appreciate citations to the following paper:
 
-<pre>
-S. Hamidi, S. Sabouri, S. Haghighi, K. Askari, Experimental Dataset of Electrochemical Efficiency of a Direct Borohydride Fuel Cell (DBFC) with Pd/C, Pt/C and Pd Decorated Ni–Co/rGO Anode Catalysts, ChemRxiv, (2020). doi: 10.26434/chemrxiv.12174438.
-</pre>
-<pre>
 
+[Hamidi S, Sabouri S, Haghighi S, Askari K. Experimental Dataset of Electrochemical Efficiency of a Direct Borohydride Fuel Cell (DBFC) with Pd/C, Pt/C and Pd Decorated Ni–Co/rGO Anode Catalysts. ChemRxiv. 2020; doi:10.26434/chemrxiv.12174438](https://chemrxiv.org/engage/chemrxiv/article-details/60c74a3e469df423a9f43ce2)
+
+```bibtex
 @article{Hamidi2020,
   doi = {10.26434/chemrxiv.12174438},
   url = {https://doi.org/10.26434/chemrxiv.12174438},
@@ -50,9 +51,7 @@ S. Hamidi, S. Sabouri, S. Haghighi, K. Askari, Experimental Dataset of Electroch
   author = {Sarmin Hamidi and Sadra Sabouri and Sepand Haghighi and Kasra Askari},
   title = {Experimental Dataset of Electrochemical Efficiency of a Direct Borohydride Fuel Cell ({DBFC}) with Pd/C,  Pt/C and Pd Decorated Ni{\textendash}Co/{rGO} Anode Catalysts}
 }
-
-
-</pre>
+```
 
 ## License
 
