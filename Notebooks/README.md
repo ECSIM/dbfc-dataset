@@ -8,7 +8,7 @@
 <table style="border-collapse: collapse;">
 	<tr>
 		<td align="center">CI</td>
-		<td align="center"><img src="https://github.com/ECSIM/dbfc-dataset/workflows/CI/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/ECSIM/dbfc-dataset/actions/workflows/test.yml/badge.svg?branch=master"></td>
 	</tr>
 </table>
 
